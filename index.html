@@ -13,6 +13,7 @@
       --container-light: white;
       --container-dark: #2c2c2c;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -52,21 +53,6 @@
 
     nav a:hover {
       color: #ffeb3b;
-    }
-
-    /* Link TikTok dengan ikon */
-    nav a.tiktok-link {
-      margin-left: 15px;
-      color: #69C9D0; /* warna khas TikTok */
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    nav a.tiktok-link:hover {
-      color: #00f2ea;
-      text-decoration: underline;
     }
 
     .mode-toggle {
@@ -187,6 +173,19 @@
       80% { opacity: 1; }
       100% { opacity: 0; display: none; }
     }
+
+    .tiktok-link svg {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .tiktok-link {
+      color: white;
+    }
+
+    .tiktok-link:hover {
+      color: #ffeb3b;
+    }
   </style>
 </head>
 <body>
@@ -196,12 +195,11 @@
     <nav>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
-      <a href="https://www.https://tiktok.com/@rinandaputra_01" target="_blank" rel="noopener noreferrer" class="tiktok-link" aria-label="https://tiktok.com/@rinandaputra_01">
-        <!-- Ikon TikTok SVG kecil -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#69C9D0" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <a href="https://tiktok.com/@rinandaputra_01" target="_blank" rel="noopener noreferrer" class="tiktok-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#69C9D0" viewBox="0 0 24 24">
           <path d="M12.005 2.004a4.98 4.98 0 004.822 4.982v2.81a7.412 7.412 0 01-7.174-7.792v8.595a4.995 4.995 0 11-4.995 4.995h3.346a7.484 7.484 0 007.566 7.485 7.49 7.49 0 007.42-7.588h-3.335a4.991 4.991 0 01-4.83-4.492z"/>
         </svg>
-        TikTok
+        TikTok Saya
       </a>
     </nav>
     <button class="mode-toggle" onclick="toggleMode()">🌓 Mode Gelap</button>
@@ -234,7 +232,6 @@
   <div class="toast" id="toast">✅ Postingan berhasil dikirim!</div>
 
   <script>
-    // Toast function
     function showToast() {
       const toast = document.getElementById("toast");
       toast.classList.add("show");
@@ -243,18 +240,15 @@
       }, 3000);
     }
 
-    // Like button
     function likePost(btn) {
       btn.innerHTML = "💖 Disukai!";
       btn.style.background = "#ffcccb";
     }
 
-    // Dark mode toggle
     function toggleMode() {
       document.body.classList.toggle("dark");
     }
 
-    // Typing effect
     const typingText = document.getElementById("typing-text");
     const texts = ["Selamat datang!", "semoga harimu menyenangkan.", "Bersosialisasi lebih mudah!"];
     let i = 0, j = 0, currentText = '', isDeleting = false;
